@@ -349,10 +349,14 @@ const testScreen = ({navigation, route}) => {
                             <ImageModal
                               resizeMode="contain"
                               imageBackgroundColor="#ffffff"
-                              style={{width: 50, height: 50}}
-                              source={
-                                questionDetails[currentQuestion].examPicQuestion
-                              }
+                              style={{width: 100, height: 100}}
+                              source={{
+                                uri:
+                                  'https://api.test.schoolcare.app/getImg/getUploadFile?name=' +
+                                  questionDetails[
+                                    currentQuestion
+                                  ].examPicQuestion.substr(8),
+                              }}
                             />
                           </View>
                         ) : null}
@@ -429,7 +433,7 @@ const testScreen = ({navigation, route}) => {
                         </View>
                       </TouchableOpacity>
                     )}
-                    
+
                     {currentQuestion === questionDetails.length - 1 ? (
                       <TouchableOpacity
                         style={{marginTop: 10}}
