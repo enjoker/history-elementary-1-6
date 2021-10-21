@@ -58,7 +58,7 @@ const scoreScreen = ({navigation, route}) => {
           correctAnswerCount += 1;
         } else if (choiceSelected[index].choiceValue !== 'หมดเวลา') {
           wrongAnswerCount += 1;
-        }        
+        }
       })
     : null;
 
@@ -71,10 +71,7 @@ const scoreScreen = ({navigation, route}) => {
     let rankingScore = 0;
     const levelBonus =
       level === 1 ? 1 : level === 3 ? 1.1 : level === 4 ? 1.2 : null;
-    if (
-      correctAnswerCount >= (questionCount * 80) / 100 &&
-      overTimePlus == 0
-    ) {
+    if (correctAnswerCount >= (questionCount * 80) / 100 && overTimePlus == 0) {
       rankingScore =
         Math.round(
           (Math.round(correctAnswerCount * levelBonus * 1000) / 1000 +
@@ -130,9 +127,9 @@ const scoreScreen = ({navigation, route}) => {
       csgName == 'สอบปลายภาคเรียน' ||
       csgName == 'สอบปลายภาคเรียนที่ 1' ||
       csgName == 'สอบปลายภาคเรียนที่ 2' ||
-      csgName == 'ภาษาไทย-สอบปลายภาคเรียน' ||
-      csgName == 'ภาษาไทย-สอบปลายภาคเรียนที่ 1' ||
-      csgName == 'ภาษาไทย-สอบปลายภาคเรียนที่ 2'
+      csgName == 'ประวัติศาสตร์-สอบปลายภาคเรียน' ||
+      csgName == 'ประวัติศาสตร์-สอบปลายภาคเรียนที่ 1' ||
+      csgName == 'ประวัติศาสตร์ย-สอบปลายภาคเรียนที่ 2'
     ) {
       setshowLevel(false);
     }
@@ -787,6 +784,7 @@ const scoreScreen = ({navigation, route}) => {
                             subid: csgId,
                             gradeid: gradeId,
                             csgName: csgName,
+                            from: 'scoreScreen',
                           })
                         }>
                         <Text

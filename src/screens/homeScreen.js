@@ -267,6 +267,20 @@ const homeScreen = ({navigation}) => {
             กลับมาหน้าหลักนี้โดยการกดรูปบ้าน {'\n'}
             <HomeIcon width={26} height={26} /> ด้านบนขวาของแต่ละหน้า
           </Text>
+          <TouchableOpacity style={{alignItems: 'center'}}>
+            <Text
+              style={[
+                styles.textLight20,
+                {
+                  padding: 10,
+                  borderRadius: 8,
+                  backgroundColor: '#FAFE2F',
+                  color: '#6E7015',
+                },
+              ]}>
+              ดาวน์โหลดวิชาอื่น ๆ กดตรงนี้
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -286,20 +300,6 @@ const homeScreen = ({navigation}) => {
           <View style={{flex: 1}}>
             <ContainerContent />
           </View>
-          <TouchableOpacity style={{alignItems: 'center'}}>
-            <Text
-              style={[
-                styles.textLight20,
-                {
-                  padding: 10,
-                  borderRadius: 8,
-                  backgroundColor: '#FAFE2F',
-                  color: '#6E7015',
-                },
-              ]}>
-              ดาวน์โหลดวิชาอื่น ๆ กดตรงนี้
-            </Text>
-          </TouchableOpacity>
         </View>
       </ImageBackground>
       <View
