@@ -23,8 +23,13 @@ import {getSubAndTimeGrade5} from '../functions/functions';
 import {getSubAndTimeGrade6} from '../functions/functions';
 import * as levelTestActions from '../store/actions/levelTest';
 
+//import Ads
+import BannerAds from '../components/bannerAds';
+
 const optionTestScreen = ({navigation, route}) => {
-  const {subid, gradeid, csgName} = route.params;
+  const subid = route.params.subid;
+  const gradeid = route.params.gradeid;
+  const csgName = route.params.csgName;
   const from = route.params.from;
   const [questionSelected, setquestionSelected] = useState(0);
   const [levelSelected, setlevelSelected] = useState(0);
@@ -37,8 +42,8 @@ const optionTestScreen = ({navigation, route}) => {
   const [timeTestMedium, settimeTestMedium] = useState(null);
   const [timeTestHard, settimeTestHard] = useState(null);
   const dispatch = useDispatch(); 
-
   useEffect(() => {}, []);
+
   const GetSubDetail1 = async () => {
     if (gradeid == 1) {
       const res = await fetch(getSubAndTimeGrade1(), {
@@ -167,6 +172,7 @@ const optionTestScreen = ({navigation, route}) => {
       }
     };
     useEffect(() => changeNameGrade(), [gradeid]);
+
     const timeTest = () => {
       if (timeTestEasy !== null && levelSelected == 1) {
         console.log(timeTestEasy + 'ง่าย');
@@ -433,15 +439,7 @@ const optionTestScreen = ({navigation, route}) => {
           </View>
         </View>
       </ImageBackground>
-      <View
-        style={{
-          backgroundColor: '#EEEEEE',
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text>Ads Area</Text>
-      </View>
+      <BannerAds />
     </SafeAreaView>
   );
 };

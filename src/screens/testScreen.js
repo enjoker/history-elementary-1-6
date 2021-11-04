@@ -21,6 +21,8 @@ import ImageModal from 'react-native-image-modal';
 import Modal from 'react-native-modal';
 import {RadioButton} from 'react-native-paper';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+//import Ads
+import BannerAds from '../components/bannerAds';
 
 const testScreen = ({navigation, route}) => {
   const {
@@ -202,6 +204,7 @@ const testScreen = ({navigation, route}) => {
   };
   const warpExam = async () => {
     let test = [];
+    console.log('1 warpExam');
     for (let k = 0; k < questionDetails.length; k++) {
       //console.log(choiceSelected);
       choiceSelected.sort((a, b) => (a.questionId > b.questionId ? 1 : -1));
@@ -364,7 +367,7 @@ const testScreen = ({navigation, route}) => {
                             <ImageModal
                               resizeMode="contain"
                               imageBackgroundColor="#ffffff"
-                              style={{width: 100, height: 100}}
+                              style={{width: 50, height: 50}}
                               source={{
                                 uri:
                                   'https://api.test.schoolcare.app/getImg/getUploadFile?name=' +
@@ -666,15 +669,7 @@ const testScreen = ({navigation, route}) => {
           </View>
         </Modal>
       </ImageBackground>
-      <View
-        style={{
-          backgroundColor: '#EEEEEE',
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text>Ads Area</Text>
-      </View>
+      <BannerAds />
     </SafeAreaView>
   );
 };
